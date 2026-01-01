@@ -1,16 +1,22 @@
 ---
-
+import BaseLayout from "../components/layouts/BaseLayout.astro";
+import Card from "../components/ui/Card.astro";
+import Button from "../components/ui/Button.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <h1>Groupe de Recherche Appliqué au Développement Durable</h1>
+
+  <p>
+    GRADD accompagne les institutions publiques et organisations
+    dans la conception, l’analyse et l’évaluation de projets de développement durable.
+  </p>
+
+  <Button>Nous contacter</Button>
+
+  <section>
+    <Card title="Études et analyses">
+      <p>Études formatives, analyses situationnelles et recherches appliquées.</p>
+    </Card>
+  </section>
+</BaseLayout>

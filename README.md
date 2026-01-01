@@ -41,3 +41,36 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+Struture Globale du site
+gradd-site/
+├── public/
+│ └── images/
+│ └── logo.svg
+│
+├── src/
+│ ├── components/
+│ │ ├── layout/
+│ │ │ ├── Header.astro
+│ │ │ ├── Footer.astro
+│ │ │ └── MainLayout.astro
+│ │ └── ui/
+│ │ ├── Button.astro
+│ │ └── Card.astro
+│ │
+│ ├── pages/
+│ │ ├── index.astro
+│ │ ├── presentation.astro
+│ │ ├── actions.astro
+│ │ ├── actualites.astro
+│ │ └── contact.astro
+│ │
+│ ├── styles/
+│ │ ├── global.css
+│ │ └── variables.css
+│ │
+│ └── env.d.ts
+│
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json

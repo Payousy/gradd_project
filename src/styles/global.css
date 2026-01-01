@@ -1,0 +1,27 @@
+@import "./variables.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: var(--text);
+}
+
+header,
+footer {
+  background: var(--secondary);
+  padding: 1rem;
+}
+
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+main {
+  padding: 2rem;
+}
