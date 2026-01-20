@@ -1,10 +1,56 @@
-<header>
-  <nav>
-    <a href="/">Accueil</a>
-    <a href="/presentation">Présentation</a>
-    <a href="/actions">Actions</a>
-    <a href="/methodologie">Méthodologie</a>
-    <a href="/actualites">Actualités</a>
-    <a href="/contact">Contact</a>
-  </nav>
+---
+//import { Astro } from "astro";
+---
+
+<header class="site-header">
+  <div class="container header-container">
+    <h1 class="logo">GRADD</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/qui-sommes-nous">Qui sommes-nous ?</a></li>
+        <li><a href="/domaines-competences">Domaines de compétences</a></li>
+        <li><a href="/methodologie">Méthodologie</a></li>
+        <li><a href="/actions">Actions & Dispositifs</a></li>
+        <li><a href="/suivi-evaluation">Suivi & Évaluation</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
+
+<style>
+.site-header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-md) 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: var(--space-lg);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+}
+</style>

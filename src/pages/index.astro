@@ -2,21 +2,93 @@
 import BaseLayout from "../components/layouts/BaseLayout.astro";
 import Card from "../components/ui/Card.astro";
 import Button from "../components/ui/Button.astro";
+import Hero from "../components/home/Hero.astro";
+import About from "../components/home/About.astro";
+import Expertise from "../components/home/Expertise.astro";
+import Methodologie from "../components/home/Methodologie.astro";
+import Missions from "../components/home/Missions.astro";
+import Vision from "../components/home/Vision.astro";
 ---
 
-<BaseLayout>
-  <h1>Groupe de Recherche Appliqué au Développement Durable</h1>
+<!-- <BaseLayout>
 
-  <p>
-    GRADD accompagne les institutions publiques et organisations
-    dans la conception, l’analyse et l’évaluation de projets de développement durable.
+  <section class="home-image">
+  <img
+    src="/src/images/home_image_1.png"
+    alt="Engagement de GRADD pour le développement"
+    class="home-image"
+  />
+
+  <div class="hero-overlay">
+    <h1>GRADD</h1>
+    <p>Pour des politiques publiques ancrées dans les réalités locales</p>
+  </div>
+</section>
+
+  
+  <Hero />
+  <About />
+  <Expertise />
+  <Methodologie />
+  <Missions />
+  <Vision />
+
+  <section class="cta">
+  <div class="container">
+    <h2>Accompagner des politiques publiques efficaces</h2>
+    <a href="/contact" class="btn-primary">Nous contacter</a>
+  </div>
+</section>
+
+  
+<!-- <p>
+    GRADD – est un cabinet d’étude et de conseil né de l’initiative d’un groupe de sociologues engagés, désireux de mettre leur expertise au service de l’action publique et des politiques de développement. Le cabinet s’inscrit dans une volonté claire : répondre aux défis auxquels font face les pouvoirs publics, les institutions et les bailleurs de fonds en matière d’évaluation, de pilotage et d’efficacité des politiques publiques et des projets de développement, notamment au Sénégal.<br /><br />
+
+La création de GRADD fait suite à plusieurs années d’expériences professionnelles menées par ses fondateurs dans le domaine du suivi-évaluation de politiques et de programmes de développement, ainsi que dans la conduite de recherches pour le compte d’organisations non gouvernementales et d’acteurs institutionnels. Ces expériences de terrain ont mis en lumière un constat partagé : bien que de nombreux projets soient initiés avec des objectifs pertinents, les outils d’analyse et les approches méthodologiques mobilisés demeurent souvent peu adaptés aux contextes socioculturels locaux.<br /><br />
+
+Sur le plan sociologique, ces dispositifs d’intervention tendent à sous-estimer les dynamiques sociales, les pratiques locales, les rapports de pouvoir et les logiques communautaires qui conditionnent pourtant la réussite des actions de développement. Cette inadéquation méthodologique se traduit fréquemment par un manque d’efficacité dans la mise en œuvre des projets, une faible appropriation par les populations concernées et, in fine, un impact limité des politiques publiques.<br /><br />
+
+C’est face à ce constat que GRADD a été conçu comme un outil d’appui stratégique et opérationnel, fondé sur des méthodes de recherche appliquée rigoureuses, contextualisées et ancrées dans les réalités locales. Le cabinet ambitionne de contribuer à une meilleure compréhension des territoires et des sociétés, afin de produire des analyses utiles à la décision publique et d’améliorer la qualité des interventions de développement.<br /><br />
+
+La vision portée par GRADD repose sur une conviction forte : le développement durable ne peut être efficace sans une connaissance fine des contextes sociaux, environnementaux et institutionnels dans lesquels il s’inscrit. À ce titre, le cabinet privilégie des approches participatives, inclusives et pluridisciplinaires, intégrant les parties prenantes à toutes les étapes du cycle de projet, de l’analyse initiale à l’évaluation finale.<br /><br />
+
+Les valeurs qui guident l’action de GRADD sont celles de la rigueur scientifique, de l’engagement éthique, de la pertinence contextuelle et de l’utilité sociale. À travers ses missions d’études, de suivi-évaluation, de planification stratégique, d’audit, de recherche-action et d’études d’impact environnemental et social, le cabinet œuvre pour renforcer l’efficacité des politiques publiques et promouvoir des trajectoires de développement plus justes, plus durables et mieux adaptées aux réalités locales.<br /><br />
+
+GRADD se positionne ainsi comme un partenaire de confiance pour les institutions publiques, les collectivités territoriales, les organisations de la société civile et les partenaires techniques et financiers, en mettant la recherche sociologique et l’analyse territoriale au cœur de l’action publique et du développement durable.<br /><br />
   </p>
+  
 
-  <Button>Nous contacter</Button>
+</BaseLayout> -->
 
-  <section>
-    <Card title="Études et analyses">
-      <p>Études formatives, analyses situationnelles et recherches appliquées.</p>
-    </Card>
+<BaseLayout>
+
+  <!-- HERO IMAGE -->
+  <section class="home-hero">
+    <img
+      src="/src/images/bananier.jpg"
+      alt="Engagement de GRADD pour le développement durable"
+      class="home-hero-image"
+    />
+
+    <div class="home-hero-overlay">
+      <h1>GRADD</h1>
+      <p>Pour des politiques publiques ancrées dans les réalités locales</p>
+    </div>
   </section>
+
+  <!-- CONTENU -->
+  <Hero />
+  <About />
+  <Expertise />
+  <Methodologie />
+  <Missions />
+  <Vision />
+
+  <section class="cta">
+    <div class="container">
+      <h2>Accompagner des politiques publiques efficaces</h2>
+      <a href="/contact" class="btn-primary">Nous contacter</a>
+    </div>
+  </section>
+
 </BaseLayout>

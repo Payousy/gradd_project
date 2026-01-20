@@ -1,3 +1,26 @@
-<footer>
-  <p>© {new Date().getFullYear()} GRADD – Tous droits réservés</p>
+<footer class="site-footer">
+  <div class="container">
+    <p>© {new Date().getFullYear()} GRADD — Tous droits réservés</p>
+    <p>
+      Contact : <a href="mailto:contact@gradd.com">contact@gradd.com</a>
+    </p>
+  </div>
 </footer>
+
+<style>
+.site-footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-md) 0;
+}
+
+.site-footer a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+</style>

@@ -1,0 +1,17 @@
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section--light {
+  background-color: var(--color-white);
+}
+
+.section--muted {
+  background-color: var(--color-primary-light);
+}

@@ -72,3 +72,11 @@ src/
 │
 └─ pages/
    └─ index.astro
+
+Structure de la page de Présentation (homepage)
+1. Hero institutionnel (carrousel)
+2. Présentation stratégique de GRADD
+3. Domaines d’intervention
+4. Méthodologie d’intervention
+5. Vision & valeurs
+6. Appel à action institutionnel
