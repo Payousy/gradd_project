@@ -1,11 +1,13 @@
----
-//import { Astro } from "astro";
----
-
 <header class="site-header">
   <div class="container header-container">
-    <h1 class="logo">GRADD</h1>
-    <nav>
+    <!-- Logo + tagline -->
+    <div class="logo-block">
+      <a href="/" class="logo">GRADD</a>
+      <span class="logo-tagline">Études & conseil</span>
+    </div>
+
+    <!-- Menu desktop -->
+    <nav class="nav-desktop">
       <ul class="nav-list">
         <li><a href="/">Accueil</a></li>
         <li><a href="/qui-sommes-nous">Qui sommes-nous ?</a></li>
@@ -15,42 +17,35 @@
         <li><a href="/suivi-evaluation">Suivi & Évaluation</a></li>
       </ul>
     </nav>
+
+    <!-- Hamburger menu (mobile) -->
+    <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
   </div>
+
+  <!-- Overlay menu mobile/tablette -->
+  <div class="menu-overlay">
+    <button class="close-menu" aria-label="Fermer le menu">×</button>
+    <ul class="overlay-nav-list">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/qui-sommes-nous">Qui sommes-nous ?</a></li>
+      <li><a href="/domaines-competences">Domaines de compétences</a></li>
+      <li><a href="/methodologie">Méthodologie</a></li>
+      <li><a href="/actions">Actions & Dispositifs</a></li>
+      <li><a href="/suivi-evaluation">Suivi & Évaluation</a></li>
+    </ul>
+  </div>
+
+  <script is=client>
+    const toggleButton = document.querySelector(".menu-toggle");
+    const closeButton = document.querySelector(".close-menu");
+    const menuOverlay = document.querySelector(".menu-overlay");
+
+    toggleButton.addEventListener("click", () => {
+      menuOverlay.classList.add("active");
+    });
+
+    closeButton.addEventListener("click", () => {
+      menuOverlay.classList.remove("active");
+    });
+  </script>
 </header>
-
-<style>
-.site-header {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: var(--space-md) 0;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: var(--space-lg);
-  margin: 0;
-  padding: 0;
-}
-
-.nav-list a {
-  color: var(--color-white);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-list a:hover {
-  text-decoration: underline;
-}
-</style>
