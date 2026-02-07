@@ -1,5 +1,5 @@
 ---
-import MainLayout from "../components/layouts/MainLayout.astro";
+import BaseLayout from "../components/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 const actualites = (await getCollection("actualites"))
@@ -7,7 +7,7 @@ const actualites = (await getCollection("actualites"))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<MainLayout title="Actualités – GRADD", description="Les dernières actualités du Groupe de Recherche Appliqué au Développement Durable">
+<BaseLayout title="Actualités – GRADD" description="Les dernières actualités du Groupe de Recherche Appliqué au Développement Durable">
   <h1>Actualités</h1>
 
   <ul>
@@ -19,4 +19,4 @@ const actualites = (await getCollection("actualites"))
       </li>
     ))}
   </ul>
-</MainLayout>
+</BaseLayout>

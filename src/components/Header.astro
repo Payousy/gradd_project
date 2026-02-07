@@ -1,3 +1,7 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
 <header class="site-header">
   <div class="container header-container">
     <!-- Logo + tagline -->
@@ -9,21 +13,21 @@
     <!-- Menu desktop -->
     <nav class="nav-desktop">
       <ul class="nav-list">
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/qui-sommes-nous">Qui sommes-nous ?</a></li>
-        <li><a href="/domaines-competences">Domaines de compétences</a></li>
-        <li><a href="/methodologie">Méthodologie</a></li>
-        <li><a href="/actions">Actions & Dispositifs</a></li>
-        <li><a href="/suivi-evaluation">Suivi & Évaluation</a></li>
+        <li><a href="/" class={currentPath === "/" ? "active" : ""}>Accueil</a></li>
+        <li><a href="/qui-sommes-nous" class={currentPath === "/qui-sommes-nous" ? "active" : ""}>Qui sommes-nous ?</a></li>
+        <li><a href="/domaines-competences" class={currentPath === "/domaines-competences" ? "active" : ""}>Domaines de compétences</a></li>
+        <li><a href="/methodologie" class={currentPath === "/methodologie" ? "active" : ""}>Méthodologie</a></li>
+        <li><a href="/actions" class={currentPath === "/actions" ? "active" : ""}>Actions & Dispositifs</a></li>
+        
       </ul>
     </nav>
 
     <!-- Hamburger menu (mobile) -->
-    <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-controls="site-menu" aria-expanded="false">☰</button>
   </div>
 
   <!-- Overlay menu mobile/tablette -->
-  <div class="menu-overlay">
+  <div id="site-menu" class="menu-overlay" aria-hidden="true">
     <button class="close-menu" aria-label="Fermer le menu">×</button>
     <ul class="overlay-nav-list">
       <li><a href="/">Accueil</a></li>
@@ -35,17 +39,50 @@
     </ul>
   </div>
 
-  <script is=client>
+  <script type="module">
     const toggleButton = document.querySelector(".menu-toggle");
     const closeButton = document.querySelector(".close-menu");
-    const menuOverlay = document.querySelector(".menu-overlay");
+    const menuOverlay = document.getElementById("site-menu");
+    const navLinks = document.querySelectorAll(".overlay-nav-list a");
 
-    toggleButton.addEventListener("click", () => {
-      menuOverlay.classList.add("active");
-    });
+    if (toggleButton && closeButton && menuOverlay) {
+      // Ouvrir le menu
+      toggleButton.addEventListener("click", () => {
+        const isActive = menuOverlay.classList.toggle("active");
+        menuOverlay.setAttribute("aria-hidden", String(!isActive));
+        toggleButton.setAttribute("aria-expanded", String(isActive));
+        if (isActive) {
+          // Focus sur le premier lien du menu
+          navLinks[0]?.focus();
+        }
+      });
 
-    closeButton.addEventListener("click", () => {
-      menuOverlay.classList.remove("active");
-    });
+      // Fermer le menu
+      closeButton.addEventListener("click", () => {
+        menuOverlay.classList.remove("active");
+        menuOverlay.setAttribute("aria-hidden", "true");
+        toggleButton.setAttribute("aria-expanded", "false");
+        toggleButton.focus();
+      });
+
+      // Fermer le menu en cliquant sur un lien
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          menuOverlay.classList.remove("active");
+          menuOverlay.setAttribute("aria-hidden", "true");
+          toggleButton.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Fermer le menu avec Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !menuOverlay.getAttribute("aria-hidden")?.includes("true")) {
+          menuOverlay.classList.remove("active");
+          menuOverlay.setAttribute("aria-hidden", "true");
+          toggleButton.setAttribute("aria-expanded", "false");
+          toggleButton.focus();
+        }
+      });
+    }
   </script>
 </header>

@@ -2,72 +2,107 @@
 import BaseLayout from "../components/layouts/BaseLayout.astro";
 ---
 
-<BaseLayout>
-  <section class="section">
-    <div class="container">
+<BaseLayout title="Méthodologie d’intervention – GRADD">
+  <main>
+
+    <!-- Intro -->
+    <section class="page-intro">
       <h1>Méthodologie d’intervention</h1>
       <p>
-        Le GRADD s’appuie sur une méthodologie structurée, progressive et adaptée
-        aux réalités du terrain éducatif, social et institutionnel.
+        Le GRADD s’appuie sur une méthodologie rigoureuse, progressive et
+        contextualisée, issue des sciences sociales et ancrée dans les réalités
+        institutionnelles, sociales et territoriales.
       </p>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
+    <!-- Principes -->
+    <section class="methodology-section reveal">
       <h2>Principes fondateurs</h2>
-      <ul>
-        <li>Approche centrée sur les besoins identifiés</li>
-        <li>Co-construction avec les acteurs locaux</li>
-        <li>Adaptabilité aux contextes institutionnels</li>
-        <li>Inscription dans une démarche éthique et responsable</li>
+      <ul class="methodology-principles">
+        <li>Analyse fine des contextes sociaux et institutionnels</li>
+        <li>Co-construction avec les acteurs et parties prenantes</li>
+        <li>Adaptation aux dynamiques locales et aux cadres existants</li>
+        <li>Exigence éthique, indépendance de l’analyse et rigueur scientifique</li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>Déroulé de l’accompagnement</h2>
+    <!-- Étapes -->
+    <section class="methodology-section alt reveal">
+      <h2>Déroulé méthodologique</h2>
 
-      <ol>
+      <ol class="methodology-steps">
         <li>
-          <strong>Diagnostic partagé</strong>  
-          Analyse des besoins, du contexte et des ressources existantes.
+          <strong>Diagnostic et cadrage</strong>
+          <p>Analyse du contexte, des enjeux, des parties prenantes et des ressources existantes.</p>
         </li>
         <li>
-          <strong>Conception du projet</strong>  
-          Définition des objectifs, des actions et des indicateurs.
+          <strong>Collecte et production des données</strong>
+          <p>Enquêtes qualitatives et quantitatives, observations de terrain et exploitation des données disponibles.</p>
         </li>
         <li>
-          <strong>Mise en œuvre</strong>  
-          Déploiement des actions en lien avec les partenaires.
+          <strong>Analyse et co-construction</strong>
+          <p>Interprétation des résultats et échanges avec les acteurs pour ajustement et validation.</p>
         </li>
         <li>
-          <strong>Suivi et ajustements</strong>  
-          Adaptation continue en fonction des retours de terrain.
+          <strong>Recommandations et accompagnement</strong>
+          <p>Formulation de recommandations opérationnelles et appui à leur mise en œuvre.</p>
         </li>
       </ol>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
+    <!-- Posture -->
+    <section class="methodology-section reveal">
       <h2>Posture professionnelle</h2>
       <p>
-        L’intervention s’inscrit dans une posture de médiation, d’écoute et
-        de respect des cadres institutionnels, favorisant la participation
-        et l’autonomie des publics accompagnés.
+        Les interventions du GRADD s’inscrivent dans une posture d’écoute,
+        de médiation et de respect des cadres institutionnels, favorisant la
+        participation des acteurs, l’appropriation des démarches et
+        l’autonomisation des bénéficiaires.
       </p>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="section">
+    <!-- Évaluation -->
+    <section class="methodology-section alt reveal">
       <h2>Évaluation et amélioration continue</h2>
       <p>
-        Chaque action fait l’objet d’un suivi et d’une évaluation permettant
-        d’ajuster les pratiques et de garantir la qualité des interventions.
+        Chaque mission fait l’objet d’un suivi et d’une évaluation permettant
+        d’ajuster les dispositifs, de capitaliser les enseignements et de
+        garantir la qualité et la durabilité des interventions.
       </p>
-    </div>
-  </section>
+    </section>
+
+    <section class="methodology-cta reveal">
+  <h2>Une méthodologie au service de domaines d’intervention concrets</h2>
+  <p>
+    Cette approche méthodologique structure l’ensemble des domaines de
+    compétences du GRADD et garantit la cohérence, la fiabilité et
+    l’opérationnalité de nos interventions.
+  </p>
+  <a href="/domaines-competences" class="btn-primary">
+    Découvrir nos domaines de compétences →
+  </a>
+</section>
+
+
+  </main>
+  <script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  reveals.forEach((el) => observer.observe(el));
+</script>
+
 </BaseLayout>
