@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 
 // Server-only API route
-export const prerender = false;
+export const prerender = true;
 
 export const POST: APIRoute = async ({ request }) => {
   try {
